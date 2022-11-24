@@ -1,7 +1,3 @@
-//
-// Created by Admin on 2022/11/24.
-//
-
 #ifndef UNTITLED_MAINWINDOW_H
 #define UNTITLED_MAINWINDOW_H
 
@@ -23,7 +19,7 @@ public:
     void on_pushButton_clicked();
 
 private:
-    int chick_num=0;
+    int chick_num = 0;
     Ui::MainWindow *ui;
 };
 

@@ -24,6 +24,8 @@
 
 0. 添加环境变量到qt的mingw73_64安装路径
 1. 将clion的编译(锤子旁边的属性里面work路径改为qt的mingw73_64安装路径)
+2. 在clion设置中添加external_tools，需要协商5个参数点击ok
+    - 具体可以看图片[add_external_tools.png](./docs/add_external_tools.png)
 
 2. cmake需要自己添加下面的内容
 

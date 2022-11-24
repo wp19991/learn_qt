@@ -27,7 +27,7 @@
 2. 在clion设置中添加external_tools，需要协商5个参数点击ok
     - 具体可以看图片[add_external_tools.png](./docs/add_external_tools.png)
 
-2. cmake需要自己添加下面的内容 
+3. cmake需要自己添加下面的内容 
 
 ```cmake
 # 下面是qt的mingw73_64安装路径
@@ -51,7 +51,7 @@ add_executable(${PROJECT_NAME}
         )
 ```
 
-3. cmake修改下面的内容
+4. cmake修改下面的内容
     - 若提示`Error copying file`，则修改下面的内容
     - 因为在windows下安装的qt的mingw73_64里面没有debug的dll文件
     - 也可能是clion没有更新，可以先看一下能不能正常运行
@@ -62,7 +62,7 @@ set(DEBUG_SUFFIX "d")
 set(DEBUG_SUFFIX "")
 ```
 
-4. 点击运行即可运行程序
+5. 点击运行即可运行程序
 
 ## 2.发布
 

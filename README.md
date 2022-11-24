@@ -62,7 +62,7 @@ set(DEBUG_SUFFIX "d")
 set(DEBUG_SUFFIX "")
 ```
 
-5. 点击运行即可运行程序
+5. 点击运行
 
 ## 2.发布
 

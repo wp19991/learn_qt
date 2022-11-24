@@ -27,7 +27,7 @@
 2. 在clion设置中添加external_tools，需要协商5个参数点击ok
     - 具体可以看图片[add_external_tools.png](./docs/add_external_tools.png)
 
-2. cmake需要自己添加下面的内容
+2. cmake需要自己添加下面的内容 
 
 ```cmake
 # 下面是qt的mingw73_64安装路径

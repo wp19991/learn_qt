@@ -18,7 +18,7 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/src/Headers
 )
 
-file(GLOB DIR "src/*.cpp" "src/Headers/*.h" "src/Forms/*.ui")
+file(GLOB DIR "src/*.cpp" "src/Headers/*.h" "src/Forms/*.ui" "src/res/*.qrc")
 add_executable(${PROJECT_NAME}
         WIN32 # 不要程序有黑色的命令行出现
         ${DIR})

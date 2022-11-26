@@ -1,4 +1,7 @@
 <RCC>
+  <qresource prefix="icon">
+    <file>icon/program.png</file>
+  </qresource>
   <qresource prefix="image">
     <file>image/11.png</file>
   </qresource>

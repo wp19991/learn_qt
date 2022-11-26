@@ -22,9 +22,10 @@
 > 需要知道qt的安装路径
 > 例如：`C:/Qt/Qt5.14.2/5.14.2/mingw73_64/bin`
 
-0. 添加环境变量qt的安装路径
-1. 将clion的编译(锤子旁边的属性里面work路径改为qt的安装路径)
-2. 在clion设置中添加external_tools，需要协商5个参数点击ok
+0. 添加环境变量`qt的安装路径`
+1. 将clion的编译(锤子旁边的属性里面work路径改为`qt的安装路径`)
+    - 具体可以看图片[change_run_work_path.png](./docs/change_run_work_path.png)
+2. 在clion设置中添加external_tools，需要写上5个参数点击`ok`
     - 具体可以看图片[add_external_tools.png](./docs/add_external_tools.png)
 
 3. cmake文件

@@ -2,7 +2,8 @@
 
 ## 0.项目目录
 
-> 为了目录结构的清晰，需要重构一下项目目录
+> 一个好的结构可以让项目更好和更容易的编写下去
+> 需要先约定一下各个文件目录的作用
 
 - `src文件夹`用于保存所有的qt源文件
     - `Forms文件夹`存放UI文件
@@ -18,6 +19,11 @@
 ![项目目录](./docs/project_directory.png)
 
 ## 1.环境配置
+
+> 项目是否能够正常启动往往是拦路虎
+
+> 这里下载安装的版本是Qt5.14.2，里面选择exe结尾的即可
+> `https://mirrors.ustc.edu.cn/qtproject/archive/qt/5.14/5.14.2/`
 
 > 需要知道qt的安装路径
 > 例如：`C:/Qt/Qt5.14.2/5.14.2/mingw73_64/bin`
@@ -51,6 +57,8 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/src/Headers
 )
 
+# 每次添加新的文件可以在clion里面右击`CMakeLists.txt`文件，选择`Reload CMake Project`
+# 从而不需要修改这里面的内容
 file(GLOB DIR "src/*.cpp" "src/Headers/*.h" "src/Forms/*.ui")
 add_executable(${PROJECT_NAME}
         WIN32 # 不要程序有黑色的命令行出现

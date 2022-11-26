@@ -25,7 +25,7 @@
 > 这里下载安装的版本是Qt5.14.2，里面选择exe结尾的即可
 > `https://mirrors.ustc.edu.cn/qtproject/archive/qt/5.14/5.14.2/`
 
-> 需要知道qt的安装路径
+> 需要知道`qt的安装路径`
 > 例如：`C:/Qt/Qt5.14.2/5.14.2/mingw73_64/bin`
 
 0. 添加环境变量`qt的安装路径`

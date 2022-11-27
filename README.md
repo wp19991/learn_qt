@@ -98,3 +98,31 @@ windeployqt xxx.exe
 # 将 `libcrypto-1_1-x64.dll` 和 `libssl-1_1-x64.dll` 移动到这个文件夹中
 # 压缩后就可以发布
 ```
+
+## 参考链接
+- 感谢下面的文章，使我从中汲取了灵感，来编写这个项目
+- 下面的文章并不是完全正确的，我只是截取中间的某些部分，具体系统学习的话还是看官方文档比较好
+
+- [Qt QNetwork 下载文件](https://blog.csdn.net/weixin_42837024/article/details/120433799)
+- [Qt笔记25：QFile读写中文乱码：指定文件编码方式](https://blog.csdn.net/weixin_42962516/article/details/117014630)
+- [Qt实现读取、显示、修改并保存txt文件](https://blog.csdn.net/weixin_43784250/article/details/89185744)
+- [在字符串中检索字符串是否存在](https://blog.csdn.net/chen_yi_long/article/details/8147645)
+- [Qt中使用QFileDialog中选择文件夹/目录](https://blog.csdn.net/weixin_39308337/article/details/115259831)
+- [qt获取桌面路径（暂定应用Windows）](https://blog.csdn.net/sono_io/article/details/119252122)
+- [qint64转为qstring qt_Qt中Qstring,char,int,QByteArray之间到转换](https://blog.csdn.net/weixin_39866966/article/details/111480995)
+- [Qt的QFile](https://blog.csdn.net/qq_38832450/article/details/102537130)
+- [QT https post请求（QNetworkRequest要设置SSL证书，而SSL证书认证有三种）](https://www.cnblogs.com/jk-Huan/p/8953541.html)
+- [Qt学习笔记一：Qt使用network模块进行http请求时获取response中的http状态码](https://blog.csdn.net/chexiaohui6306/article/details/100924225)
+- [Qt使用QSettings保存和读取用户信息](https://blog.csdn.net/nchu_zhangyiqing/article/details/109716113)
+- [QT中全局变量的定义和使用](https://blog.csdn.net/u011555996/article/details/108110996)
+- [Qt开发经验](https://gitee.com/feiyangqingyun/qtkaifajingyan)
+- [QGridLayout示例及刷新布局](https://blog.csdn.net/qq_41605114/article/details/102638649)
+- [【Qt】QIcon::fromTheme：从系统主题中获取图标](https://blog.csdn.net/u010168781/article/details/88558858)
+- [QT 使用全局缩放进行全分辨率适配（QT_SCALE_FACTOR）](https://blog.csdn.net/u014410266/article/details/107488789)
+- [003 - Clion 创建 Qt UI Class 踩坑](https://blog.csdn.net/zcteo/article/details/117558432)
+- [Qt程序打包发布方法（使用官方提供的windeployqt工具）](https://blog.csdn.net/iw1210/article/details/51253458)
+- [QT+CMake 发布应用时, 如何去掉控制台?](https://www.zhihu.com/question/453843402)
+- [C++学习笔记 QT connect/disconnect与connect的五个参数](https://blog.csdn.net/NekoMiMiChtholly/article/details/106600692)
+- [怎样解决Qt编译出的程序运行时缺少libgcc_s_dw2-1.dll 文件的问题？](https://blog.csdn.net/suda_lv/article/details/62046557)
+- [如何在CLion里愉快的开发QT](https://blog.csdn.net/qq_31710315/article/details/122942280)
+

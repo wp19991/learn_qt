@@ -25,6 +25,8 @@ public:
 
     void action_logout_clicked();
 
+    void action_request_example_clicked();
+
     void change_window_title(const QString& add_something);
 private:
     Ui::MainWindow *ui;

@@ -2,6 +2,11 @@
 
 😉在Clion中快速开始c++QT项目，具有良好的项目路径
 
+- 快速编写新功能
+    - 单独在 `src/Forms文件夹` 里创建一个 `QWidget.ui`
+    - 使用 `qt_designer` 编辑ui文件
+    - 然后在 `mainwindow` 里面将 `main_layout` 指向这个 `QWidget` 即可
+
 - 实现一个示例：请求网页下载文件并显示进度
   ![请求网页下载显示进度功能](./docs/first_app.png)
 
@@ -36,7 +41,7 @@
 0. 添加https支持
     - 如果不进行这一步，就下载和访问不了https的文件
     - 下载 `http://slproweb.com/products/Win32OpenSSL.html` 里面的 `Win64 OpenSSL v1.1.1s Light`
-    - 安装步骤里面选择的时候选择复制到安装路径下 
+    - 安装步骤里面选择的时候选择复制到安装路径下
     - 安装结束后到这个软件的安装路径下找到 `libcrypto-1_1-x64.dll` 和 `libssl-1_1-x64.dll` 文件
     - 将 `libcrypto-1_1-x64.dll` 和 `libssl-1_1-x64.dll` 移动到 `qt的安装路径` 中
 0. 添加环境变量 `qt的安装路径`

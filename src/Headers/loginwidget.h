@@ -6,6 +6,7 @@
 #define QT_CHART_LOGINWIDGET_H
 
 #include <QWidget>
+
 #include <UtilTools.h>
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,7 @@ public:
     ~LoginWidget() override;
 
     void login_pushButton_clicked();
+
     void register_pushButton_clicked();
 
 private:

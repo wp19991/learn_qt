@@ -7,6 +7,7 @@
 
 #include <QMainWindow>
 #include "loginwidget.h"
+#include "learnnetworkwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

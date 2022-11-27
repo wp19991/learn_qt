@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
+    this->main_widget = new LearnNetworkWidget();
+    this->clear_and_add_main_widget(this->main_widget);
+
     //连接action与函数的信号槽
     connect(ui->actionlogin, &QAction::triggered, this, &MainWindow::action_login_clicked);
     connect(ui->actionlogout, &QAction::triggered, this, &MainWindow::action_logout_clicked);

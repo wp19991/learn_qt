@@ -67,4 +67,3 @@ void LoginWidget::register_pushButton_clicked() {
     ui->state_label->setText("注册成功");
 }
 
-

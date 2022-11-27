@@ -11,7 +11,7 @@
 class UtilTools {
 
 public:
-    static void save_info(const QString &prefix, const QString &key,const QString &value, bool is_format_base64);
+    static void save_info(const QString &prefix, const QString &key, const QString &value, bool is_format_base64);
 
     static QString get_info(const QString &prefix, const QString &key, bool is_format_base64);
 };

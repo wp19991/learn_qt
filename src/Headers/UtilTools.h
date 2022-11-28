@@ -23,8 +23,8 @@ public:
 
     static QString get_file_context(const QString &file_path);
 
-    static void main_layout_widget_change_main_windows_title(QObject *main_layout_widget_parent_to_main_window,
-                                                             const QString &add_something);
+    static void change_main_window_title(QObject *widget_parent_to_main_window,
+                                         const QString &add_something);
 
     static void setting_save_info(const QString &prefix,
                                   const QString &key,

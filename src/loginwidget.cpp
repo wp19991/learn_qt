@@ -41,8 +41,8 @@ void LoginWidget::login_pushButton_clicked() {
     UtilTools::setting_save_info("user_info", "password", password, true);
 //    this->change_parent_title(ui->username_lineEdit->text());
     QObject *parent_to_main_window = this->parent()->parent();
-    UtilTools::main_layout_widget_change_main_windows_title(parent_to_main_window,
-                                                            ui->username_lineEdit->text());
+    UtilTools::change_main_window_title(parent_to_main_window,
+                                        ui->username_lineEdit->text());
     ui->state_label->setText("登录成功");
 }
 
@@ -52,8 +52,8 @@ void LoginWidget::register_pushButton_clicked() {
     UtilTools::setting_save_info("user_info", "username", user_name, false);
     UtilTools::setting_save_info("user_info", "password", password, true);
     QObject *parent_to_main_window = this->parent()->parent();
-    UtilTools::main_layout_widget_change_main_windows_title(parent_to_main_window,
-                                                            ui->username_lineEdit->text());
+    UtilTools::change_main_window_title(parent_to_main_window,
+                                        ui->username_lineEdit->text());
     ui->state_label->setText("注册成功");
 }
 

@@ -39,10 +39,10 @@ void UtilTools::setting_save_info(const QString &prefix,
     config->endGroup();
 }
 
-void UtilTools::main_layout_widget_change_main_windows_title(QObject *main_layout_widget_parent_to_main_window,
-                                                             const QString &add_something) {
+void UtilTools::change_main_window_title(QObject *widget_parent_to_main_window,
+                                         const QString &add_something) {
 
-    QObject *a = main_layout_widget_parent_to_main_window;
+    QObject *a = widget_parent_to_main_window;
     if (a->isWidgetType()) {
         // 获取本来的标题
         QString b = a->property("windowTitle").toString();

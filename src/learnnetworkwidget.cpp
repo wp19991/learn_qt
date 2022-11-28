@@ -14,18 +14,20 @@ LearnNetworkWidget::LearnNetworkWidget(QWidget *parent) :
     ui->setupUi(this);
 
     // 初始化参数
-    QString save_path = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-    ui->save_file_path_lineEdit->setText(save_path);
     this->file_download_start = new QElapsedTimer;
     this->net_manager = new QNetworkAccessManager(this);
     this->file = nullptr;
     this->reply = nullptr;
+
+    // 设置请求支持https 还需要根据readme里面进行添加https的支持
     this->request = new QNetworkRequest;
-    // 支持https
     QSslConfiguration config;
     config.setPeerVerifyMode(QSslSocket::VerifyNone);
     config.setProtocol(QSsl::TlsV1SslV3);
     this->request->setSslConfiguration(config);
+
+    // 初始化显示
+    ui->save_file_path_lineEdit->setText(UtilTools::get_desktop_path());
 
     // 连接action与函数的信号槽
     connect(ui->pushButton, &QPushButton::clicked,
@@ -37,14 +39,18 @@ LearnNetworkWidget::LearnNetworkWidget(QWidget *parent) :
 }
 
 LearnNetworkWidget::~LearnNetworkWidget() {
+    delete file_download_start;
+    delete net_manager;
+    delete request;
+    delete file;
+    delete reply;
     delete ui;
 }
 
 void LearnNetworkWidget::select_save_file_path_pushButton_clicked() {
-    QString desktop_path = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
     QString selectDir = QFileDialog::getExistingDirectory(this,
                                                           tr("选择下载保存的文件夹"),
-                                                          desktop_path,
+                                                          UtilTools::get_desktop_path(),
                                                           QFileDialog::ShowDirsOnly);
     ui->save_file_path_lineEdit->setText(selectDir);
 }
@@ -55,12 +61,12 @@ void LearnNetworkWidget::pushButton_clicked() {
     if (this->net_manager) {
         QUrl t_url = QUrl(ui->url_lineEdit->text());
         // 获得文件名称
-        QString file_name = ui->url_lineEdit->text().section('/', -1);;
+        QString file_name = UtilTools::safe_get_file_name(ui->url_lineEdit->text());
         QString file_save_path = ui->save_file_path_lineEdit->text();
         ui->url_lineEdit->setDisabled(true);
         ui->save_file_path_lineEdit->setDisabled(true);
-        QUrl t_save_path = QUrl(file_save_path + "/" + file_name);
-        this->file = new QFile(t_save_path.toString());
+        QString file_path = UtilTools::safe_splice_path_and_path(file_save_path, file_name);
+        this->file = new QFile(file_path);
         if (this->file->open(QIODevice::WriteOnly)) {
             this->request->setUrl(t_url);
             // TODO 附带header请求
@@ -115,21 +121,17 @@ void LearnNetworkWidget::net_finish() {
     this->file = nullptr;
     this->reply->deleteLater();
     ui->state_label->setText("ok");
+    ui->progressBar->setValue(100);
     // 输出文件路径
-    QString file_name = ui->url_lineEdit->text().section('/', -1);
+    QString file_name = UtilTools::safe_get_file_name(ui->url_lineEdit->text());
     QString file_save_path = ui->save_file_path_lineEdit->text();
-    QUrl t_url = QUrl(file_save_path + "/" + file_name);
-    ui->response_textBrowser->setText("文件已经下载在：" + t_url.toString());
+    QString file_path = UtilTools::safe_splice_path_and_path(file_save_path, file_name);
+
+    ui->response_textBrowser->setText("文件已经下载在：" + file_path);
     if (file_name.contains(".htm", Qt::CaseSensitive) ||
         !file_name.contains(".", Qt::CaseSensitive)) {
-        auto *resp_file = new QFile(t_url.toString());
-        if (resp_file->open(QFile::ReadOnly)) {
-            QTextStream in(resp_file);
-            in.setCodec("UTF-8");
-            ui->response_textBrowser->setHtml(in.readAll().toHtmlEscaped());
-        }
-        resp_file->close();
-        delete resp_file;
+        QString file_context = UtilTools::get_file_context(file_path);
+        ui->response_textBrowser->setHtml(file_context);
     }
     ui->url_lineEdit->setDisabled(false);
     ui->save_file_path_lineEdit->setDisabled(false);

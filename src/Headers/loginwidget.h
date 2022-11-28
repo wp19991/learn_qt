@@ -21,14 +21,13 @@ public:
 
     ~LoginWidget() override;
 
-    void login_pushButton_clicked();
-
-    void register_pushButton_clicked();
 
 private:
     Ui::LoginWidget *ui;
 
-    void change_parent_title(const QString &add_something);
+    void login_pushButton_clicked();
+
+    void register_pushButton_clicked();
 };
 
 

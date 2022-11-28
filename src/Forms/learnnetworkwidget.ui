@@ -167,6 +167,9 @@
        <property name="value">
         <number>20</number>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>

@@ -12,9 +12,9 @@
 #include <QNetworkReply>
 #include <QNetworkConfiguration>
 #include <QFile>
-#include <QStandardPaths>
 #include <QElapsedTimer>
 
+#include <UtilTools.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LearnNetworkWidget; }

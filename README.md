@@ -100,9 +100,14 @@ windeployqt xxx.exe
 ```
 
 ## 参考链接
+
 - 感谢下面的文章，使我从中汲取了灵感，来编写这个项目
 - 下面的文章并不是完全正确的，我只是截取中间的某些部分，具体系统学习的话还是看官方文档比较好
 
+- [QUrl介绍](https://blog.csdn.net/u012260238/article/details/53944984)
+- [QT QString根据路径获取文件名称以及所在文件夹等信息](https://blog.csdn.net/weixin_37113987/article/details/61196128)
+- [Qt拼接文件路径方式总结](https://blog.csdn.net/zyhse/article/details/109247472)
+- [Qt关于路径的处理](https://blog.csdn.net/qq_41949352/article/details/121717235)
 - [Qt QNetwork 下载文件](https://blog.csdn.net/weixin_42837024/article/details/120433799)
 - [Qt笔记25：QFile读写中文乱码：指定文件编码方式](https://blog.csdn.net/weixin_42962516/article/details/117014630)
 - [Qt实现读取、显示、修改并保存txt文件](https://blog.csdn.net/weixin_43784250/article/details/89185744)

@@ -4,8 +4,8 @@
 
 // You may need to build the project (run Qt uic code generator) to get "ui_TcpServer.h" resolved
 
-#include "tcpserver.h"
-#include "Forms/ui_TcpServer.h"
+#include "TcpServerWidget.h"
+#include "Forms/ui_TcpServerWidget.h"
 
 
 TcpServer::TcpServer(QWidget *parent) :
@@ -21,6 +21,7 @@ TcpServer::TcpServer(QWidget *parent) :
         this->m_tcp = this->m_server->nextPendingConnection();
         ui->msg_textEdit->append("成功和客户端建立了新的连接...");
         ui->state_label->setText("连接成功");
+        ui->send_msg_pushButton->setEnabled(true);
         // 检测是否有客户端数据
         connect(m_tcp, &QTcpSocket::readyRead, this, [=]() {
             // 接收数据
@@ -33,9 +34,11 @@ TcpServer::TcpServer(QWidget *parent) :
             this->m_tcp->deleteLater();
             ui->state_label->setText("连接失败");
             ui->start_server_pushButton->setEnabled(true);
+            ui->send_msg_pushButton->setEnabled(false);
         });
     });
 
+    ui->send_msg_pushButton->setEnabled(false);
     //连接action与函数的信号槽
     connect(ui->start_server_pushButton, &QPushButton::clicked,
             this, &TcpServer::start_server_pushButton_clicked);

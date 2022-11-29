@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "mainwindow.h"
+#include "MainWindow.h"
 
 int main(int argc, char *argv[]) {
     //高分屏属性以便支持2K4K等高分辨率

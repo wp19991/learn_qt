@@ -2,8 +2,8 @@
 // Created by Admin on 2022/11/29.
 //
 
-#ifndef LEARN_QT_TCPCLIENT_H
-#define LEARN_QT_TCPCLIENT_H
+#ifndef LEARN_QT_TCPCLIENTWIDGET_H
+#define LEARN_QT_TCPCLIENTWIDGET_H
 
 #include <QWidget>
 #include <QTcpServer>
@@ -33,4 +33,4 @@ private:
 };
 
 
-#endif //LEARN_QT_TCPCLIENT_H
+#endif //LEARN_QT_TCPCLIENTWIDGET_H

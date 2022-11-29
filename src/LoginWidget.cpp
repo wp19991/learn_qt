@@ -5,7 +5,7 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LoginWidget.h" resolved
 
 
-#include "loginwidget.h"
+#include "LoginWidget.h"
 #include "Forms/ui_LoginWidget.h"
 
 

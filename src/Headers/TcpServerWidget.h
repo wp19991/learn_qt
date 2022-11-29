@@ -2,8 +2,8 @@
 // Created by Admin on 2022/11/29.
 //
 
-#ifndef LEARN_QT_TCPSERVER_H
-#define LEARN_QT_TCPSERVER_H
+#ifndef LEARN_QT_TCPSERVERWIDGET_H
+#define LEARN_QT_TCPSERVERWIDGET_H
 
 #include <QWidget>
 #include <QTcpServer>
@@ -35,4 +35,4 @@ private:
 };
 
 
-#endif //LEARN_QT_TCPSERVER_H
+#endif //LEARN_QT_TCPSERVERWIDGET_H

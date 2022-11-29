@@ -9,10 +9,10 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 
-#include "loginwidget.h"
-#include "tcpserver.h"
-#include "tcpclient.h"
-#include "learnnetworkwidget.h"
+#include "LoginWidget.h"
+#include "TcpServerWidget.h"
+#include "TcpClientWidget.h"
+#include "LearnNetworkWidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

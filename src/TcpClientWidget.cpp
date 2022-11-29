@@ -4,8 +4,8 @@
 
 // You may need to build the project (run Qt uic code generator) to get "ui_TcpClient.h" resolved
 
-#include "tcpclient.h"
-#include "Forms/ui_TcpClient.h"
+#include "TcpClientWidget.h"
+#include "Forms/ui_TcpClientWidget.h"
 
 
 TcpClient::TcpClient(QWidget *parent) :
@@ -26,7 +26,10 @@ TcpClient::TcpClient(QWidget *parent) :
     connect(this->m_tcp, &QTcpSocket::connected, this, [=]()
     {
         ui->msg_textEdit->append("恭喜, 连接服务器成功!!!");
+        ui->connect_server_pushButton->setEnabled(false);
+        ui->disconnect_server_pushButton->setEnabled(true);
         ui->state_label->setText("连接成功");
+        ui->send_msg_pushButton->setEnabled(true);
     });
 
     // 检测服务器是否和客户端断开了连接
@@ -35,9 +38,11 @@ TcpClient::TcpClient(QWidget *parent) :
         ui->msg_textEdit->append("服务器已经断开了连接, ...");
         ui->connect_server_pushButton->setEnabled(true);
         ui->disconnect_server_pushButton->setEnabled(false);
+        ui->send_msg_pushButton->setEnabled(false);
     });
 
     ui->disconnect_server_pushButton->setEnabled(false);
+    ui->send_msg_pushButton->setEnabled(false);
     //连接action与函数的信号槽
     connect(ui->connect_server_pushButton, &QPushButton::clicked,
             this, &TcpClient::connect_server_pushButton_clicked);
@@ -56,9 +61,6 @@ void TcpClient::connect_server_pushButton_clicked() {
     unsigned short port = ui->port_lineEdit->text().toInt();
     // 连接服务器
     this->m_tcp->connectToHost(QHostAddress(ip), port);
-    ui->connect_server_pushButton->setEnabled(false);
-    ui->disconnect_server_pushButton->setEnabled(true);
-    ui->state_label->setText("连接成功");
 }
 
 void TcpClient::send_msg_pushButton_clicked() {

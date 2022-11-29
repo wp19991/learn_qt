@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>TcpClient</class>
- <widget class="QWidget" name="TcpClient">
+ <widget class="QWidget" name="TcpClientWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

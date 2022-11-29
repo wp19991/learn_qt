@@ -5,7 +5,7 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LearnNetworkWidget.h" resolved
 
 
-#include "learnnetworkwidget.h"
+#include "LearnNetworkWidget.h"
 #include "Forms/ui_LearnNetworkWidget.h"
 
 

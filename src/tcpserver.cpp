@@ -56,6 +56,7 @@ void TcpServer::start_server_pushButton_clicked() {
     // 设置服务器监听
     this->m_server->listen(QHostAddress::Any, port);
     ui->start_server_pushButton->setEnabled(false);
+    ui->state_label->setText("启动成功");
 }
 
 void TcpServer::send_msg_pushButton_clicked() {

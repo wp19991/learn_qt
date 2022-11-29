@@ -58,6 +58,7 @@ void TcpClient::connect_server_pushButton_clicked() {
     this->m_tcp->connectToHost(QHostAddress(ip), port);
     ui->connect_server_pushButton->setEnabled(false);
     ui->disconnect_server_pushButton->setEnabled(true);
+    ui->state_label->setText("连接成功");
 }
 
 void TcpClient::send_msg_pushButton_clicked() {

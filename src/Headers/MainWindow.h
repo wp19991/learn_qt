@@ -1,5 +1,5 @@
 //
-// Created by Admin on 2022/11/25.
+// Created by wp19991 on 2022/11/25.
 //
 
 #ifndef QT_CHART_MAINWINDOW_H

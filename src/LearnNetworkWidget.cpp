@@ -1,5 +1,5 @@
 //
-// Created by Admin on 2022/11/27.
+// Created by wp19991 on 2022/11/27.
 //
 
 // You may need to build the project (run Qt uic code generator) to get "ui_LearnNetworkWidget.h" resolved

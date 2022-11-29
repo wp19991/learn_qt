@@ -1,5 +1,5 @@
 //
-// Created by Admin on 2022/11/25.
+// Created by wp19991 on 2022/11/25.
 //
 
 // You may need to build the project (run Qt uic code generator) to get "ui_MainWindow.h" resolved

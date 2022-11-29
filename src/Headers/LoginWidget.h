@@ -1,5 +1,5 @@
 //
-// Created by Admin on 2022/11/26.
+// Created by wp19991 on 2022/11/26.
 //
 
 #ifndef QT_CHART_LOGINWIDGET_H

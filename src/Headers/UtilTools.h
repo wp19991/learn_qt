@@ -9,12 +9,15 @@
 #include <QFile>
 #include <QString>
 #include <QSettings>
+#include <QtNetwork>
 #include <QTextStream>
 #include <QStandardPaths>
 
 class UtilTools {
 
 public:
+    static QString get_localhost_address();
+
     static QString get_desktop_path();
 
     static QString safe_get_file_name(const QString &file_network_path);

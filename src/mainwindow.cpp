@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionlogin, &QAction::triggered, this, &MainWindow::action_login_clicked);
     connect(ui->actionlogout, &QAction::triggered, this, &MainWindow::action_logout_clicked);
     connect(ui->actionrequest_example, &QAction::triggered, this, &MainWindow::action_request_example_clicked);
+    connect(ui->actiontcp_example, &QAction::triggered, this, &MainWindow::action_tcp_example_clicked);
 }
 
 MainWindow::~MainWindow() {
@@ -62,11 +63,41 @@ void MainWindow::clear_and_add_main_widget(QWidget *m_w) {
     }
     if (m_w != nullptr) {
         m_w->setParent(this);
+        ui->main_layout->addWidget(m_w);
     }
-    ui->main_layout->addWidget(m_w);
 }
 
+void MainWindow::closeEvent(QCloseEvent *event) {
+    QMessageBox::Button btn = QMessageBox::question(this, "关闭窗口", "您确定要关闭窗口吗?");
+    if (btn == QMessageBox::Yes) {
+        // 接收并处理这个事件，因为这是主窗口，所以直接关闭整个程序
+        QApplication *app;
+        app->exit(0);
+        event->accept();
+    } else {
+        // 忽略这个事情
+        event->ignore();
+    }
+}
 
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    QString dx = QString::number(event->size().width());
+    dx.append("*");
+    dx.append(QString::number(event->size().height()));
+    this->change_window_title(dx);
+    qDebug() << "oldSize: " << event->oldSize() << "currentSize: " << event->size();
+}
 
+void MainWindow::action_tcp_example_clicked() {
+    this->main_widget = new TcpServer();
+    this->clear_and_add_main_widget(this->main_widget);
 
-
+    auto *tcp_client_widget = new TcpClient();
+    tcp_client_widget->setWindowModality(Qt::NonModal);
+    tcp_client_widget->setWindowTitle(tr("Tcp客户端窗口"));
+    QIcon icon;
+    icon.addFile(QString::fromUtf8(":/icon/icon/program.png"), QSize(), QIcon::Normal, QIcon::Off);
+    tcp_client_widget->setWindowIcon(icon);
+    tcp_client_widget->setGeometry(0,0,400,300);
+    tcp_client_widget->show();
+}

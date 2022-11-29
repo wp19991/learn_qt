@@ -28,10 +28,6 @@ public:
 
     ~LearnNetworkWidget() override;
 
-    void pushButton_clicked();
-
-    void select_save_file_path_pushButton_clicked();
-
 private:
     Ui::LearnNetworkWidget *ui;
     QNetworkAccessManager *net_manager;
@@ -46,7 +42,10 @@ private:
     void on_ready_read();
 
     void progress_change(qint64 bytesReceived, qint64 bytesTotal);
-};
 
+    void pushButton_clicked();
+
+    void select_save_file_path_pushButton_clicked();
+};
 
 #endif //LEARN_QT_LEARNNETWORKWIDGET_H

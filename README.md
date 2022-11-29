@@ -7,7 +7,10 @@
     - 使用 `qt_designer` 编辑ui文件
     - 然后在 `mainwindow` 里面将 `main_layout` 指向这个 `QWidget` 即可
 
-- 实现一个示例：请求网页下载文件并显示进度
+
+- 示例1：tcp服务器_客户端
+    - ![tcp服务器](./docs/tcp_server_and_client_example.png)
+- 示例2：请求网页下载文件并显示进度
     - 还没有实现下面两个功能，已经在代码里面标记了
     - 你可以完成下面的功能来检验自己是否能看懂这个项目
     - TODO 1 请求附带 `header`
@@ -81,7 +84,7 @@ include_directories(
 # 从而不需要修改这里面的内容
 file(GLOB DIR "src/*.cpp" "src/Headers/*.h" "src/Forms/*.ui" "src/res/*.qrc")
 add_executable(${PROJECT_NAME}
-        WIN32 # 不要程序有黑色的命令行出现
+        # WIN32 # 不要程序有黑色的命令行出现，但是加上这个就不能qDebug()了，TODO 可以发布的时候修改这里
         ${DIR})
 
 target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
@@ -104,6 +107,8 @@ windeployqt xxx.exe
 - 感谢下面的文章，使我从中汲取了灵感，来编写这个项目
 - 下面的文章并不是完全正确的，我只是截取中间的某些部分，具体系统学习的话还是看官方文档比较好
 
+- [基于 TCP 的 Qt 网络通信](https://subingwen.cn/qt/socket-tcp/) 
+- [Qt事件](https://subingwen.cn/qt/event_handler)
 - [QUrl介绍](https://blog.csdn.net/u012260238/article/details/53944984)
 - [QT QString根据路径获取文件名称以及所在文件夹等信息](https://blog.csdn.net/weixin_37113987/article/details/61196128)
 - [Qt拼接文件路径方式总结](https://blog.csdn.net/zyhse/article/details/109247472)

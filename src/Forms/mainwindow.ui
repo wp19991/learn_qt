@@ -63,6 +63,7 @@
      <string>示例</string>
     </property>
     <addaction name="actionrequest_example"/>
+    <addaction name="actiontcp_example"/>
    </widget>
    <addaction name="menuuser"/>
    <addaction name="menufunction"/>
@@ -95,6 +96,11 @@
   <action name="actionrequest_example">
    <property name="text">
     <string>1.网络下载请求</string>
+   </property>
+  </action>
+  <action name="actiontcp_example">
+   <property name="text">
+    <string>2.tcp服务器与客户端</string>
    </property>
   </action>
  </widget>

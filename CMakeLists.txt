@@ -20,7 +20,7 @@ include_directories(
 
 file(GLOB DIR "src/*.cpp" "src/Headers/*.h" "src/Forms/*.ui" "src/res/*.qrc")
 add_executable(${PROJECT_NAME}
-        WIN32 # 不要程序有黑色的命令行出现
+        # WIN32 # 不要程序有黑色的命令行出现，但是加上这个就不能qDebug()了，TODO 可以发布的时候修改这里
         ${DIR})
 
 target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})

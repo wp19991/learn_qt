@@ -78,26 +78,26 @@ QString UtilTools::get_file_context(const QString &file_path) {
 
 QString UtilTools::safe_get_file_name(const QString &file_network_path) {
     QString res = file_network_path.section('/', -1).split("?")[0];
-    res.replace("\\","_");
-    res.replace("/","_");
-    res.replace(":","_");
-    res.replace("*","_");
-    res.replace("?","_");
-    res.replace("\"","_");
-    res.replace("<","_");
-    res.replace(">","_");
-    if(res.size()==0){
+    res.replace("\\", "_");
+    res.replace("/", "_");
+    res.replace(":", "_");
+    res.replace("*", "_");
+    res.replace("?", "_");
+    res.replace("\"", "_");
+    res.replace("<", "_");
+    res.replace(">", "_");
+    if (res.size() == 0) {
         // 如果大小为0的情况就找-2的位置，因为有的时候会出现下面的情况
         // https://www.bilibili.com/video/BV1nP411w7tx/?spm_id_from=333.1007.tianma.1-1-1.click
         res = file_network_path.section('/', -2).split("/")[0];
-        res.replace("\\","_");
-        res.replace("/","_");
-        res.replace(":","_");
-        res.replace("*","_");
-        res.replace("?","_");
-        res.replace("\"","_");
-        res.replace("<","_");
-        res.replace(">","_");
+        res.replace("\\", "_");
+        res.replace("/", "_");
+        res.replace(":", "_");
+        res.replace("*", "_");
+        res.replace("?", "_");
+        res.replace("\"", "_");
+        res.replace("<", "_");
+        res.replace(">", "_");
     }
     return res;
 }
@@ -105,4 +105,17 @@ QString UtilTools::safe_get_file_name(const QString &file_network_path) {
 QString UtilTools::safe_splice_path_and_path(const QString &pre_path, const QString &after_path) {
     QString res = QDir::cleanPath(pre_path + QDir::separator() + after_path);
     return res;
+}
+
+QString UtilTools::get_localhost_address() {
+    //获取主机名
+    QString localHostName = QHostInfo::localHostName();
+    //获取本机的IP地址(可能有多条）
+    QHostInfo info = QHostInfo::fromName(localHostName);
+    for (int i = 0; i < info.addresses().size(); ++i) {
+        if (info.addresses()[i].protocol() == QAbstractSocket::IPv4Protocol) {
+            return info.addresses()[i].toString();
+        }
+    }
+    return QString();
 }

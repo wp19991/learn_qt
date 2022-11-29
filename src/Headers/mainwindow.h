@@ -6,7 +6,12 @@
 #define QT_CHART_MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QMouseEvent>
+
 #include "loginwidget.h"
+#include "tcpserver.h"
+#include "tcpclient.h"
 #include "learnnetworkwidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,17 +26,27 @@ public:
 
     ~MainWindow() override;
 
+private:
+    Ui::MainWindow *ui;
+    QWidget *main_widget{};//主界面，可以根据action的按钮进行更换
+
+    void clear_and_add_main_widget(QWidget *m_w);
+
+    // 重写关闭事件处理器函数
+    void closeEvent(QCloseEvent *event) override;
+
+    // 重写改变大小事件处理器函数
+    void resizeEvent(QResizeEvent *event) override;
+
     void action_login_clicked();
 
     void action_logout_clicked();
 
     void action_request_example_clicked();
 
-    void change_window_title(const QString& add_something);
-private:
-    Ui::MainWindow *ui;
-    QWidget *main_widget{};//主界面，可以根据action的按钮进行更换
-    void clear_and_add_main_widget(QWidget *m_w);
+    void action_tcp_example_clicked();
+
+    void change_window_title(const QString &add_something);
 };
 
 
